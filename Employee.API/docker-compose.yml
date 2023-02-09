@@ -9,7 +9,7 @@ services:
         ports:
             - "1433:1433"
     employeeapi:
-        build: .
+        image: damish/employeeapi-employeeapi
         depends_on:
             - orderapiv1
         environment:
