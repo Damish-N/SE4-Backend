@@ -28,6 +28,9 @@ namespace Employee.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(option=>option.AddPolicy("AllowAccess_TO_API",
+                policy=>policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+                ));
            services.AddControllers();
 
             services.AddScoped<IEmployeeProvider, EmployeeProvider>();
@@ -37,16 +40,16 @@ namespace Employee.API
 
             services.AddDbContext<EmployeeContext>(options =>
             {
-                var server = Configuration["ServerName"];
-                var port = "1433";
+                 var server = Configuration["ServerName"];
+                 var port = "1433";
                 var database = Configuration["Database"];
                 var user = Configuration["UserName"];
                 var password = Configuration["Password"];
-//                var server = "localhost";
-  //              var port = "1433";
-    //            var database = "Employee";
-      //          var user = "sa";
-        //        var password = "Test@1234";
+                                // var server = "localhost";
+                            //   var port = "1433";
+                            // var database = "Employee";
+                        //   var user = "sa";
+                        // var password = "Test@1234";
 
                 options.UseSqlServer(
                     $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}",
@@ -59,6 +62,7 @@ namespace Employee.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("AllowAccess_TO_API");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employee.API.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20230209193304_initial-migration-3")]
-    partial class initialmigration3
+    [Migration("20230210211236_initial-migration")]
+    partial class initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,7 @@ namespace Employee.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0741053d-9604-4add-a92b-94268e8eb5f9",
+                            Id = "5c35a3a2-fa6e-4c17-b8ef-d63493318e8b",
                             Description = "A strong, concentrated coffee beverage made by forcing pressurized hot water through finely ground coffee beans.",
                             Name = "Espresso",
                             Price = 300.0,
@@ -55,7 +55,7 @@ namespace Employee.API.Migrations
                         },
                         new
                         {
-                            Id = "fd83c36b-d7be-4b9e-b073-4c321f799dd2",
+                            Id = "4575c2ab-e8d9-4fd8-a376-3d84a03ecca1",
                             Description = " A coffee beverage made with espresso and steamed milk, topped with a small amount of foam. ",
                             Name = "Latte",
                             Price = 550.0,
@@ -63,7 +63,7 @@ namespace Employee.API.Migrations
                         },
                         new
                         {
-                            Id = "f7716028-db41-47fc-9734-bff34e6ac94b",
+                            Id = "2f5e6bb7-dff6-41c7-a8b9-708a83372f37",
                             Description = "A coffee drink made with equal parts espresso, steamed milk and milk foam.",
                             Name = "Cappuccino",
                             Price = 450.0,
@@ -92,14 +92,14 @@ namespace Employee.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "53227acf-81e8-4684-bcf8-0e19f47e1565",
+                            Id = "f24f97b2-bbc2-46cc-9e35-c65776f4c9af",
                             Age = 50,
                             FirstName = "David",
                             LastName = "Mike"
                         },
                         new
                         {
-                            Id = "2ee0c2a3-5f98-4496-88e3-ffd1c596aeb1",
+                            Id = "0ef0353f-d04a-44ac-8d8e-4f5d008d88a0",
                             Age = 50,
                             FirstName = "Steve",
                             LastName = "Warner"

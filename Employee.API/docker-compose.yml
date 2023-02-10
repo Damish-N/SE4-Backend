@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-    orderapiv1:
+    orderapi:
         image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
         environment:
             ACCEPT_EULA: "Y"
@@ -9,11 +9,11 @@ services:
         ports:
             - "1433:1433"
     employeeapi:
-        image: damish/employeeapi-employeeapi
+        image: damish/dockersqlv2:latest
         depends_on:
-            - orderapiv1
+            - orderapi
         environment:
-            ServerName: "orderapiv1"
+            ServerName: "orderapi"
             Database: "Employee"
             UserName: "SA"
             Password: "Test@1234"
