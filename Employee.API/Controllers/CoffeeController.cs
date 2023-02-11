@@ -36,5 +36,11 @@ namespace Employee.API.Controllers
         {
             coffeeProvider.AddCoffee(coffee);
         }
+
+        [HttpPut("{coffeeId}")]
+        public void UpdateCoffee(string coffeeId, DataAccessLayer.Coffee coffee)
+        {
+            coffeeProvider.UpdateCoffee(coffee, coffeeId);
+        }
     }
 }

@@ -30,6 +30,16 @@ namespace Employee.API.Provider
             return coffeeRepository.GetCoffee();
         }
 
+        public void UpdateCoffee(DataAccessLayer.Coffee coffee, string coffeeId)
+        {
+            coffeeRepository.UpdateCoffee(coffee);
+        }
+
+        public bool CoffeeExists(string coffeeId)
+        {
+            coffeeRepository.CoffeeExists(coffee);
+        }
+
 
     }
 }

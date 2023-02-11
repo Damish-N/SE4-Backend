@@ -12,6 +12,7 @@ namespace Employee.API.DataAccess.Repositories.Contracts
         Coffee GetCoffee(string coffeeId);
         void AddCoffee(Coffee coffee);
         bool Save();
-
+        void UpdateCoffee(Coffee coffee, string Id);
+        bool CoffeeExists(string Id);
     }
 }

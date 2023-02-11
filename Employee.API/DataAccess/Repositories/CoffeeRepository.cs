@@ -58,6 +58,41 @@ namespace Employee.DataAccessLayer.Repositories
             }
         }
 
+        public void UpdateCoffee(Coffee coffee, string Id)
+        {
+            if (coffee == null)
+            {
+                throw new ArgumentNullException(nameof(coffee));
+            }
+            if (Id == null)
+            {
+                throw new ArgumentNullException(nameof(coffee));
+            }
+            if(Id != coffee.Id)
+            {
+                //return BadRequest();
+            }
+            //_context.Coffees.Update(coffee, Id);
+            _context.Entry(coffee).State = EntryState.Modified;
+
+            try
+            {
+                Save();
+            }
+            catch(DbUpdateConcurrencyException)
+            {
+                if (!coffeeExists())
+                {
+                    // 
+                }
+            }
+        }
+
+        public bool CoffeeExists(string Id)
+        {
+            return _context.Coffees.Any(c => c.Id == Id);
+        }
+
 
     }
 }
