@@ -38,9 +38,28 @@ namespace Employee.API.Controllers
         }
 
         [HttpPut("{coffeeId}")]
-        public void UpdateCoffee(string coffeeId, DataAccessLayer.Coffee coffee)
+        public ActionResult UpdateCoffee(string coffeeId, DataAccessLayer.Coffee coffee)
         {
+
+            if (coffee == null)
+            {
+                //throw new ArgumentNullException(nameof(coffee));
+                return BadRequest(); 
+            }
+            if (coffeeId == null)
+            {
+                return BadRequest();
+            }
+            if (coffeeId != coffee.Id)
+            {
+                return BadRequest();
+            }
+            if(!coffeeProvider.CoffeeExists(coffeeId))
+            {
+                return NotFound();
+            }
             coffeeProvider.UpdateCoffee(coffee, coffeeId);
+            return NoContent();
         }
     }
 }

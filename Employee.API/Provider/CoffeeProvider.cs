@@ -32,12 +32,12 @@ namespace Employee.API.Provider
 
         public void UpdateCoffee(DataAccessLayer.Coffee coffee, string coffeeId)
         {
-            coffeeRepository.UpdateCoffee(coffee);
+            coffeeRepository.UpdateCoffee(coffee, coffeeId);
         }
 
         public bool CoffeeExists(string coffeeId)
         {
-            coffeeRepository.CoffeeExists(coffee);
+            return coffeeRepository.CoffeeExists(coffeeId);
         }
 
 

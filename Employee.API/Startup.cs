@@ -40,16 +40,16 @@ namespace Employee.API
 
             services.AddDbContext<EmployeeContext>(options =>
             {
-                 var server = Configuration["ServerName"];
-                 var port = "1433";
+                var server = Configuration["ServerName"];
+                var port = "1433";
                 var database = Configuration["Database"];
                 var user = Configuration["UserName"];
                 var password = Configuration["Password"];
-                                // var server = "localhost";
-                            //   var port = "1433";
-                            // var database = "Employee";
-                        //   var user = "sa";
-                        // var password = "Test@1234";
+                /*var server = "localhost";
+                var port = "1433";
+                var database = "employee";
+                var user = "sa";
+                var password = "Test@1234";*/
 
                 options.UseSqlServer(
                     $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}",

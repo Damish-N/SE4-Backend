@@ -1,5 +1,6 @@
 ﻿using Employee.API.DataAccess.Repositories.Contracts;
 using Employee.DataAccessLayer.DBContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,32 +61,11 @@ namespace Employee.DataAccessLayer.Repositories
 
         public void UpdateCoffee(Coffee coffee, string Id)
         {
-            if (coffee == null)
-            {
-                throw new ArgumentNullException(nameof(coffee));
-            }
-            if (Id == null)
-            {
-                throw new ArgumentNullException(nameof(coffee));
-            }
-            if(Id != coffee.Id)
-            {
-                //return BadRequest();
-            }
             //_context.Coffees.Update(coffee, Id);
-            _context.Entry(coffee).State = EntryState.Modified;
+            _context.Entry(coffee).State = EntityState.Modified;
 
-            try
-            {
-                Save();
-            }
-            catch(DbUpdateConcurrencyException)
-            {
-                if (!coffeeExists())
-                {
-                    // 
-                }
-            }
+            Save();
+            
         }
 
         public bool CoffeeExists(string Id)
