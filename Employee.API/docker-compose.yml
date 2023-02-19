@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-    orderapi:
+    coffeeshopdb:
         image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
         environment:
             ACCEPT_EULA: "Y"
@@ -8,14 +8,18 @@ services:
             MSSQL_PID: Express
         ports:
             - "1433:1433"
-    employeeapi:
-        image: damish/dockersqlv3:latest
+    coffeeshop-backend:
+        image: thatz98/coffeeshop-backend:latest
         depends_on:
-            - orderapi
+            - coffeeshopdb
         environment:
-            ServerName: "orderapi"
+            ServerName: "coffeeshopdb"
             Database: "Employee"
             UserName: "SA"
             Password: "Test@1234"
         ports:
             - "1337:80"
+    coffeeshopfrontend:
+        image: thatz98/coffeeshop-frontend:latest
+        ports:
+            - "3003:80"
