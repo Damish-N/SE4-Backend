@@ -9,7 +9,7 @@ services:
         ports:
             - "1433:1433"
     employeeapi:
-        image: damish/dockersqlv2:latest
+        image: damish/dockersqlv3:latest
         depends_on:
             - orderapi
         environment:

@@ -40,6 +40,7 @@ namespace Employee.API
 
             services.AddDbContext<EmployeeContext>(options =>
             {
+
                 var server = Configuration["ServerName"];
                 var port = "1433";
                 var database = Configuration["Database"];

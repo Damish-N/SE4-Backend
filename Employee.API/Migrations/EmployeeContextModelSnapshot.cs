@@ -45,7 +45,7 @@ namespace Employee.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5c35a3a2-fa6e-4c17-b8ef-d63493318e8b",
+                            Id = "e7c06fb2-f188-4927-af2c-acb734e9781b",
                             Description = "A strong, concentrated coffee beverage made by forcing pressurized hot water through finely ground coffee beans.",
                             Name = "Espresso",
                             Price = 300.0,
@@ -53,7 +53,7 @@ namespace Employee.API.Migrations
                         },
                         new
                         {
-                            Id = "4575c2ab-e8d9-4fd8-a376-3d84a03ecca1",
+                            Id = "a5ef22d6-ed6c-4989-9068-b0239cedcc6f",
                             Description = " A coffee beverage made with espresso and steamed milk, topped with a small amount of foam. ",
                             Name = "Latte",
                             Price = 550.0,
@@ -61,7 +61,7 @@ namespace Employee.API.Migrations
                         },
                         new
                         {
-                            Id = "2f5e6bb7-dff6-41c7-a8b9-708a83372f37",
+                            Id = "d75541d1-1ba0-47ef-afdc-5273c7f8ea27",
                             Description = "A coffee drink made with equal parts espresso, steamed milk and milk foam.",
                             Name = "Cappuccino",
                             Price = 450.0,
@@ -90,14 +90,14 @@ namespace Employee.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f24f97b2-bbc2-46cc-9e35-c65776f4c9af",
+                            Id = "84981468-0753-48e7-ae92-47c1bdbdc0a1",
                             Age = 50,
                             FirstName = "David",
                             LastName = "Mike"
                         },
                         new
                         {
-                            Id = "0ef0353f-d04a-44ac-8d8e-4f5d008d88a0",
+                            Id = "eb3f6b85-4e99-4347-8d18-67c047adba30",
                             Age = 50,
                             FirstName = "Steve",
                             LastName = "Warner"
